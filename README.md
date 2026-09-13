@@ -6,6 +6,8 @@
 **Initial public proposal: 13 September 2026**  
 **Version: 0.1**
 
+![Extractable Web Surfaces concept](extractable-web-surfaces-concept.png)
+
 ---
 
 ## Abstract
