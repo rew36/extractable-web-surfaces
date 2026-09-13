@@ -3,7 +3,7 @@
 **A proposal for user-driven extraction of web components into persistent operating-system objects.**
 
 **Concept by REW**  
-**Initial public proposal: September 2026**  
+**Initial public proposal: 13 September 2026**  
 **Version: 0.1**
 
 ---
