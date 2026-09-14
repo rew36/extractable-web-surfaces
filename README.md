@@ -276,6 +276,80 @@ It is about allowing parts of the Web to become first-class objects of the opera
 
 ---
 
+## Related Work
+
+Extractable Web Surfaces does not start from an empty field.
+
+Several existing technologies and proposals already solve parts of the same broader problem:
+
+### Electron
+
+Electron allows developers to build desktop applications using HTML, CSS and JavaScript by packaging a Chromium-based runtime with the application.
+
+This already demonstrates that web interfaces can behave as full desktop applications.
+
+However, Electron applications are created, packaged and distributed by developers as separate desktop software. The user does not extract an individual component from an already running website.
+
+### Progressive Web Apps
+
+Progressive Web Apps allow whole web applications to be installed and integrated more closely with the operating system.
+
+They solve the problem at the application level.
+
+Extractable Web Surfaces instead explores integration at the level of individual components inside a web application.
+
+### Document Picture-in-Picture
+
+Document Picture-in-Picture allows arbitrary HTML content to be displayed in a separate browser-managed window.
+
+This is particularly close to the visual part of Extractable Web Surfaces.
+
+However, the resulting window is temporary and remains tied to the lifecycle and restrictions of the originating browser context.
+
+### Sub Apps
+
+The Sub Apps proposal explores allowing a parent web application to manage related applications that may receive their own operating-system integration while sharing parts of the parent's web context.
+
+This overlaps with several architectural goals of Extractable Web Surfaces.
+
+The main distinction explored here is the interaction model: a user selects a specific surface inside a live application and promotes that surface into an independent persistent OS object.
+
+### Web App Projections and OS Surfaces
+
+Previous discussions around web-app projections and widgets have explored exposing parts of web applications to operating-system surfaces.
+
+Extractable Web Surfaces builds on a similar direction but treats the extracted component as a user-controlled object that may exist as a window, widget, panel item, or other OS surface.
+
+---
+
+## What This Proposal Adds
+
+This proposal is **not** about inventing web content inside desktop windows.
+
+That already exists.
+
+Instead, Extractable Web Surfaces explores combining several existing ideas into one user-driven model:
+
+- a developer declares individual components of a live web application as extractable surfaces;
+- the user explicitly chooses which surface to extract;
+- extraction happens from the existing application rather than through separate software installation;
+- the extracted surface remains associated with its original web origin and security context;
+- authentication and application state should remain available without requiring a separate login;
+- the surface may persist after the original browser UI is closed;
+- additional operating-system capabilities are granted explicitly;
+- the extracted surface may become different types of OS objects;
+- the original web application and the extracted surface may remain synchronized.
+
+The proposed distinction is therefore primarily one of **composition, ownership and user interaction**.
+
+The developer defines what can be extracted.
+
+The browser provides the runtime and security boundary.
+
+The operating system provides integration.
+
+The user decides what becomes part of their working environment.
+
 ## The Browser as a Runtime
 
 In this model, the browser becomes less visible.
@@ -528,5 +602,3 @@ GitHub: **rew36**
 ## Version History
 
 ### 0.1 — September 2026
-
-Initial public concept.
